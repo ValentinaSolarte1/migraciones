@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bienvenido a mi app Laravel</title>
+    <title>Bienvenido a mi app hecha en Laravel</title>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <body>
-    <h1>Bienvenido a mi aplicación</h1>
-    <p>Esta es una aplicación para practicar con el motor de plantillas Blade.</p>
+    <div class="container">
+        <h1>Bienvenido Usuario</h1>
+        <p>Aquí practicaré el modelo de plantillas de Blade.</p>
+    </div>
 </body>
 </html>
