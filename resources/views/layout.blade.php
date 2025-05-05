@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'Gimnasio Fitness Pro')</title>
+    <title>@yield('title', 'Productos')</title>
 
     <style>
         /* Reset básico */
@@ -26,7 +26,7 @@
         /* Encabezado */
         header {
             width: 100%;
-            background: #007bff;
+            background: hsl(211, 90%, 68%);
             padding: 15px 0;
             text-align: center;
         }
@@ -101,6 +101,9 @@
         @media (max-width: 768px) {
             .container {
                 width: 90%;
+
+
+
             }
         }
     </style>
@@ -108,13 +111,11 @@
 <body>
 
     <header>
-        <h1>Gimnasio Fitness Pro</h1>
+        <h1>Productos de alta calidad</h1>
         <nav>
             <ul>
-                <li><a href="{{ route('home') }}">Inicio</a></li>
-                <li><a href="{{ route('clientes.index') }}">Clientes</a></li>
-                <li><a href="{{ route('planes.index') }}">Planes</a></li>
-                <li><a href="{{ route('contacto') }}">Contacto</a></li>
+
+
             </ul>
         </nav>
     </header>
@@ -124,7 +125,7 @@
     </main>
 
     <footer>
-        <p>© {{ date('Y') }} Gimnasio Fitness Pro. Todos los derechos reservados.</p>
+        <p>© {{ date('Y') }} Productos de alta calidad.</p>
     </footer>
 
 </body>
