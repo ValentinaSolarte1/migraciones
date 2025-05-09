@@ -1,28 +1,31 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ApiProductoController;
-use App\Http\Controllers\ApiCategoriaController;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Api\AuthController;
 
+use App\Http\Controllers\ApiCategoriaController;
+use App\Http\Controllers\ApiProductoController;
 
 /*
 |--------------------------------------------------------------------------
 | API Routes
 |--------------------------------------------------------------------------
 |
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "api" middleware group. Make something great!
+| Aquí se registran las rutas de la API.
 |
 */
 
+// Rutas de autenticación
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login']);
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+// Rutas protegidas por autenticación
+Route::middleware('auth:api')->group(function () {
+
+    // Rutas protegidas de Categorías
+    Route::apiResource('categorias', ApiCategoriaController::class);
+
+    // Rutas protegidas de Productos
+    Route::apiResource('productos', ApiProductoController::class);
 });
-Route::apiResource('productos', ApiProductoController::class);
-
-
-
-Route::apiResource('categorias', ApiCategoriaController::class);
